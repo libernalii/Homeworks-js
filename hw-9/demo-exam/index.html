@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/modal.css">
+    <title>Адмінпанель книжкового магазину</title>
+</head>
+
+<body>
+    <!-- Хедер -->
+    <header class="header">
+        <h1>Адмінпанель книжкового магазину</h1>
+        <button class="btn-create" id="btnCreate">+ Додати книгу</button>
+    </header>
+
+    <!-- Контейнер для контенту -->
+    <div class="product-container">
+        <p style="text-align: center; color: #7f8c8d; margin-top: 50px;">
+            Тут будуть відображатися книги...
+        </p>
+    </div>
+
+    <!-- Модальне вікно -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Додати книгу</h2>
+                <button class="btn-close" id="btnClose">&times;</button>
+            </div>
+
+            <form id="bookForm" novalidate>
+                
+                <!-- Назва книги -->
+                <div class="form-group">
+                    <label for="bookTitle">Назва книги *</label>
+                    <input 
+                        type="text" 
+                        id="bookTitle" 
+                        name="title" 
+                        placeholder="Наприклад: Гаррі Поттер і філософський камінь" 
+                        minlength="2"
+                        maxlength="100"
+                        required
+                    >
+                    <span class="error-message"></span>
+                </div>
+
+                <!-- Автор -->
+                <div class="form-group">
+                    <label for="bookAuthor">Автор *</label>
+                    <input 
+                        type="text" 
+                        id="bookAuthor" 
+                        name="author" 
+                        placeholder="Дж. К. Роулінг"
+                        minlength="2"
+                        maxlength="70"
+                        required
+                    >
+                    <span class="error-message"></span>
+                </div>
+
+                <!-- Жанр -->
+                <div class="form-group">
+                    <label for="bookGenre">Жанр *</label>
+                    <select id="bookGenre" name="genre" required>
+                        <option value="">Оберіть жанр</option>
+                        <option value="Фантастика">Фантастика</option>
+                        <option value="Фентезі">Фентезі</option>
+                        <option value="Детектив">Детектив</option>
+                        <option value="Роман">Роман</option>
+                        <option value="Бізнес">Бізнес</option>
+                        <option value="Саморозвиток">Саморозвиток</option>
+                        <option value="Дитячі книги">Дитячі книги</option>
+                        <option value="Інше">Інше</option>
+                    </select>
+                    <span class="error-message"></span>
+                </div>
+
+                <!-- Ціна та кількість -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bookPrice">Ціна (грн) *</label>
+                        <input 
+                            type="number" 
+                            id="bookPrice" 
+                            name="price" 
+                            placeholder="350" 
+                            min="1" 
+                            max="20000"
+                            step="0.01" 
+                            required
+                        >
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookQty">Кількість *</label>
+                        <input 
+                            type="number" 
+                            id="bookQty" 
+                            name="qty" 
+                            placeholder="10" 
+                            min="1"
+                            max="10000"
+                            required
+                        >
+                        <span class="error-message"></span>
+                    </div>
+                </div>
+
+                <!-- Опис -->
+                <div class="form-group">
+                    <label for="bookDescription">Опис *</label>
+                    <textarea 
+                        id="bookDescription" 
+                        name="description"
+                        placeholder="Короткий опис сюжету книги..."
+                        required
+                    ></textarea>
+                    <span class="error-message"></span>
+                </div>
+
+                <!-- Фото URL -->
+                <div class="form-group">
+                    <label for="bookPhoto">URL обкладинки *</label>
+                    <input 
+                        type="url" 
+                        id="bookPhoto" 
+                        name="photo" 
+                        placeholder="https://example.com/book.jpg" 
+                        pattern="https?://.+\.(jpg|jpeg|png|webp|gif)"
+                        title="URL має починатися з http:// або https:// та закінчуватися на .jpg/.jpeg/.png/.webp/.gif"
+                        required
+                    >
+                    <span class="error-message"></span>
+                </div>
+
+                <!-- Кнопки -->
+                <div class="form-buttons">
+                    <button type="button" class="btn btn-secondary" id="btnCancel">Скасувати</button>
+                    <button type="submit" class="btn btn-primary">Зберегти</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>

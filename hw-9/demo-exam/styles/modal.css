@@ -1,0 +1,166 @@
+/* ===== МОДАЛЬНЕ ВІКНО ===== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(30, 20, 15, 0.55); /* теплий відтінок */
+    z-index: 1500;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #fdf8f4; /* теплий фон */
+    padding: 28px;
+    border-radius: 10px;
+    width: 92%;
+    max-width: 640px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 1px solid #e7d8c9;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+    animation: fadeIn 0.25s ease;
+}
+
+/* Анімація */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Заголовок ===== */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+    border-bottom: 1px solid #ead9cc;
+    padding-bottom: 12px;
+}
+
+.modal-header h2 {
+    font-size: 22px;
+    color: #5c3d2e;
+    font-weight: 700;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #8b6b56;
+    transition: 0.25s;
+}
+
+.btn-close:hover {
+    color: #c97a40;
+}
+
+/* ===== ФОРМА ===== */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #5c3d2e;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d6c2b4;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    background-color: #fcf7f3;
+    transition: border-color 0.25s, box-shadow 0.25s, background-color 0.25s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #c97a40;
+    box-shadow: 0 0 0 2px rgba(201, 122, 64, 0.25);
+    background-color: #fff;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+/* Валідація */
+.form-group input:valid,
+.form-group select:valid,
+.form-group textarea:valid {
+    border-color: #8bb567;
+}
+
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+    border-color: #d9534f;
+}
+
+/* Помилки */
+.error-message {
+    display: block;
+    color: #d9534f;
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 18px;
+}
+
+/* ===== КНОПКИ ===== */
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.25s, transform 0.1s;
+}
+
+/* Основна кнопка — колір із хедера */
+.btn-primary {
+    background-color: #c97a40;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #b06936;
+}
+
+/* Вторинна */
+.btn-secondary {
+    background-color: #a89284;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #8b7568;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}

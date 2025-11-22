@@ -1,0 +1,149 @@
+/* ===== ОВЕРЛЕЙ ===== */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 20, 15, 0.55); /* теплий затемнений фон */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1500;
+}
+
+.overlay.open {
+    display: flex;
+}
+
+/* ===== МОДАЛЬНЕ ВІКНО ===== */
+.modal {
+    background-color: #fdf8f4; /* теплий світлий фон */
+    padding: 28px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 460px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+    border: 1px solid #e7d8c9;
+    position: relative;
+    animation: fadeIn 0.25s ease;
+}
+
+/* Анімація */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== ЗАГОЛОВОК ===== */
+.modal h2 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #5c3d2e;
+    margin-bottom: 20px;
+}
+
+/* ===== КНОПКА ЗАКРИТТЯ ===== */
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #8b6b56;
+    transition: 0.25s;
+}
+
+.close-btn:hover {
+    color: #c97a40;
+}
+
+/* ===== ФОРМА ===== */
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #5c3d2e;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d6c2b4;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fcf7f3;
+    transition: border-color 0.25s, box-shadow 0.25s, background-color 0.25s;
+}
+
+/* Фокус */
+input:focus {
+    outline: none;
+    border-color: #c97a40;
+    box-shadow: 0 0 0 2px rgba(201, 122, 64, 0.25);
+    background-color: #fff;
+}
+
+/* Валідація */
+input:valid {
+    border-color: #8bb567;
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: #d9534f;
+}
+
+/* ===== ПОМИЛКИ ===== */
+.error-message {
+    color: #d9534f;
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 16px;
+}
+
+/* ===== КНОПКИ ===== */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #c97a40;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.25s, transform 0.1s;
+}
+
+button[type="submit"]:hover {
+    background-color: #b06936;
+}
+
+button[type="submit"]:active {
+    transform: scale(0.97);
+}
+
+/* Кнопка відкриття */
+#openModalBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #c97a40;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+#openModalBtn:hover {
+    background-color: #b06936;
+}

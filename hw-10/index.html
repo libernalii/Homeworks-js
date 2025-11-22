@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="openModalBtn">Open registration</button>
+
+    <!-- МОДАЛЬНЕ ВІКНО -->
+    <div id="modalOverlay" class="overlay">
+        <div class="modal">
+            <button class="close-btn" id="closeModalBtn">✖</button>
+
+            <h2>Registration</h2>
+
+            <form id="registerForm" novalidate>
+
+                <!-- Нікнейм -->
+                <label>
+                    Nickname:
+                    <input type="text" id="username" required minlength="3">
+                </label>
+                <div class="error-message" id="usernameError"></div>
+
+                <!-- Email -->
+                <label>
+                    Email:
+                    <input type="email" id="email" required>
+                </label>
+                <div class="error-message" id="emailError"></div>
+
+                <!-- Пароль -->
+                <label>
+                    Password:
+                    <input type="password" id="password" required minlength="6">
+                </label>
+                <div class="error-message" id="passwordError"></div>
+
+                <!-- Підтвердження пароля -->
+                <label>
+                    Password confirmation:
+                    <input type="password" id="confirmPassword" required minlength="6">
+                </label>
+                <div class="error-message" id="confirmPasswordError"></div>
+
+                <button type="submit">Register</button>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
